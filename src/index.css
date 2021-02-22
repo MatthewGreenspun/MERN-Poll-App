@@ -1,13 +1,72 @@
-body {
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "sans-serif";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.user-profile {
+  display: flex;
+  align-items: flex-start
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border-bottom: 1px solid #979797;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+}
+
+.nav-tab:hover{
+  transition: 0.3s;
+  background-color: #e7e7e7;
+}
+
+.sidebar {
+  min-height: 100px;
+  height: 90vh;
+  min-width: 290px;
+  width: 15vw;
+  border: 1px solid #696969;
+  border-radius: 4px;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+
+.polls {
+  margin: 0 auto;
+  overflow: auto;
+  max-height: 90vh;
+}
+
+.poll {
+  text-align: center;
+  min-width: 290px;
+  width: 60vw;
+  margin: 0.5rem auto;
+  border: 1px solid #696969;
+  border-radius: 4px;
+}
+
+.poll-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #4288c2;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 4px;
+}
+
+.poll-item:hover {
+  transition: 0.3s;
+  background-color: #87c4e0;
+  color: white;
 }
