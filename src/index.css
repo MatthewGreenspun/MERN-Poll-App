@@ -8,7 +8,11 @@
 
 .user-profile {
   display: flex;
-  align-items: flex-start
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 80em;
+  min-width: 290px;
+  margin: 0 auto;
 }
 
 .navbar {
@@ -41,15 +45,19 @@
 }
 
 .polls {
-  margin: 0 auto;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: none;
   max-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
 }
 
 .poll {
   text-align: center;
   min-width: 290px;
-  width: 60vw;
+  width: 100%;
   margin: 0.5rem auto;
   border: 1px solid #696969;
   border-radius: 4px;
