@@ -26,7 +26,7 @@ router.route("/add").post((req, res) => {
     const newUser = new User({username, polls});
 
     newUser.save()
-        .then(() => res.json("User Added"))
+        .then(() => res.json({id: newUser._id}))
         .catch((err) => res.status(400).json("Error: " + err));
 });
 
