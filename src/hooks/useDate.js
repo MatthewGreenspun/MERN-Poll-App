@@ -1,4 +1,5 @@
 export default function useDate(date) {
+    if(date === null) return "Loading ...";
     let formatedDate = "";
     const year = date.slice(0,4)
     const month = date.slice(5, 7);

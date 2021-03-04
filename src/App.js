@@ -8,7 +8,7 @@ export default function App() {
     const [user, setUser] = useState(null);
     const [totalVotes, setTotalVotes] = useState(0);
     useEffect(() => {
-        async function getApiData() {
+        async function fetchUserData() {
             const apiRes = await axios.get("http://localhost:5000/users/603708852cdd127a245dd23f");
             const json = JSON.parse(apiRes.request.response);
             console.log(json);
@@ -21,7 +21,7 @@ export default function App() {
             setTotalVotes(tmpTotalVotes)
             setUser(json);
         }
-        getApiData();
+        fetchUserData();
     }, [])
     return (
         <section className = "user-app">
