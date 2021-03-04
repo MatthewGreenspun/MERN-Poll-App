@@ -7,6 +7,8 @@ import {useState, useEffect} from "react";
 export default function App() {
     const [user, setUser] = useState(null);
     const [totalVotes, setTotalVotes] = useState(0);
+    const [isOnMyPolls, setIsOnMyPolls] = useState(true); 
+
     useEffect(() => {
         async function fetchUserData() {
             const apiRes = await axios.get("http://localhost:5000/users/603708852cdd127a245dd23f");
@@ -25,15 +27,18 @@ export default function App() {
     }, [])
     return (
         <section className = "user-app">
-            <Navbar />
+            <Navbar 
+                isOnMyPolls = {isOnMyPolls}
+                onChangeTab = {(tab) => setIsOnMyPolls(tab)}
+            />
             <div className = "user-profile">
-                <Sidebar 
+                {isOnMyPolls && <Sidebar 
                     sidebarObj = {{
                         username: user === null? "Loading ..." : user.username, 
                         totalVotes: user === null? 0 : totalVotes,
                         dateJoined: user === null? null : user.createdAt.slice(0,10),
                     }} 
-                />
+                />}
                 <section className = "polls">
                     <Poll 
                         pollObj = {{
