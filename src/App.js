@@ -8,18 +8,26 @@ export default function App() {
     const [user, setUser] = useState(null);
     const [totalVotes, setTotalVotes] = useState(0);
     const [isOnMyPolls, setIsOnMyPolls] = useState(true); 
+    const [polls, setPolls] = useState([]);
 
     useEffect(() => {
         async function fetchUserData() {
             const apiRes = await axios.get("http://localhost:5000/users/603708852cdd127a245dd23f");
             const json = JSON.parse(apiRes.request.response);
             console.log(json);
+
             let tmpTotalVotes = 0;
+            let tmpPolls = [];
             json.polls.forEach((poll) => {
+                let newPollObj = {pollTitle: poll.pollTitle, pollItems: []};
                 Object.keys(poll.pollOptions).forEach((option) => {
                     tmpTotalVotes += poll.pollOptions[option];
+                    newPollObj.pollItems.push({itemName: option, votes: poll.pollOptions[option]});
                 });
+                tmpPolls.push(newPollObj);
             });
+
+            setPolls(tmpPolls);
             setTotalVotes(tmpTotalVotes)
             setUser(json);
         }
@@ -40,17 +48,15 @@ export default function App() {
                     }} 
                 />}
                 <section className = "polls">
-                    <Poll 
-                        pollObj = {{
-                            pollTitle: "Favorite Letter", 
-                            pollItems: [
-                                {itemName: 'a', votes: 1, percentage: 25},
-                                {itemName: 'a', votes: 1, percentage: 25},
-                                {itemName: 'a', votes: 1, percentage: 25},
-                                {itemName: 'a', votes: 1, percentage: 25},
-                            ]
-                        }} 
-                    /> 
+                    {polls.map((poll, i) => (
+                        <Poll 
+                            key = {i}
+                            pollObj = {{
+                                pollTitle: poll.pollTitle,
+                                pollItems: poll.pollItems
+                            }}
+                        />
+                    ))}
                 </section>
             </div>
         </section>

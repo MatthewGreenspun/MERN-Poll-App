@@ -54,8 +54,6 @@ body {
 }
 
 .polls {
-  overflow-y: auto;
-  overflow-x: none;
   max-height: 90vh;
   width: 100%;
   display: flex;
