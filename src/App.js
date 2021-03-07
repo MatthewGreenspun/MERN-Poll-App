@@ -19,7 +19,7 @@ export default function App() {
             let tmpTotalVotes = 0;
             let tmpPolls = [];
             json.polls.forEach((poll) => {
-                let newPollObj = {pollTitle: poll.pollTitle, pollItems: []};
+                let newPollObj = {pollTitle: poll.pollTitle, id: poll.id, pollItems: []};
                 Object.keys(poll.pollOptions).forEach((option) => {
                     tmpTotalVotes += poll.pollOptions[option];
                     newPollObj.pollItems.push({itemName: option, votes: poll.pollOptions[option]});
@@ -51,10 +51,7 @@ export default function App() {
                     {polls.map((poll, i) => (
                         <Poll 
                             key = {i}
-                            pollObj = {{
-                                pollTitle: poll.pollTitle,
-                                pollItems: poll.pollItems
-                            }}
+                            pollObj = {poll}
                         />
                     ))}
                 </section>

@@ -22,6 +22,20 @@ body {
   color: white;
 }
 
+@media screen and (max-width: 1000px) {
+  .user-profile {
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .sidebar {
+    text-align: center;
+    height: auto !important;
+    width: 100% !important;
+    margin: 0.5rem auto !important;
+  }
+}
+
 .navbar {
   display: flex;
   width: 100%;
@@ -45,7 +59,7 @@ body {
 .sidebar {
   min-height: 100px;
   height: 90vh;
-  min-width: 290px;
+  min-width: 290px; 
   width: 15vw;
   border: 1px solid #696969;
   border-radius: 4px;
@@ -66,8 +80,20 @@ body {
   min-width: 290px;
   width: 100%;
   margin: 0.5rem auto;
+  padding: 1rem;
   border: 1px solid #696969;
   border-radius: 4px;
+}
+
+#total-votes {
+  background-color: #0051ff;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0.2rem;
+  margin-right: 0.5rem;
+  border-radius: 10px;
+  float: right;
 }
 
 .poll-item {
