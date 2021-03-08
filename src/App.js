@@ -44,6 +44,7 @@ export default function App() {
                     sidebarObj = {{
                         username: user === null? "Loading ..." : user.username, 
                         totalVotes: user === null? 0 : totalVotes,
+                        numberOfPolls: polls.length,
                         dateJoined: user === null? null : user.createdAt.slice(0,10),
                     }} 
                 />}

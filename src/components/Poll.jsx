@@ -15,12 +15,11 @@ export default function Poll(props) {
     }, [pollItems]);
 
     async function handleVote(option) {
-        setHasVoted(true);
-        console.log("clicked on ", option);
         if(hasVoted) return;
         const body = {id, option}
         const response = await axios.post("http://localhost:5000/users/updatepoll/603708852cdd127a245dd23f", body);
         console.log(response);
+        setHasVoted(true);
         setSelection(option);
     }
 
