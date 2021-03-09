@@ -2,6 +2,7 @@ import axios from "axios";
 import Navbar from "./components/Navbar";
 import Poll from "./components/Poll";
 import Sidebar from "./components/Sidebar";
+import NewPollForm from "./components/NewPollForm";
 import {useState, useEffect} from "react";
 
 export default function App() {
@@ -9,6 +10,7 @@ export default function App() {
     const [totalVotes, setTotalVotes] = useState(0);
     const [isOnMyPolls, setIsOnMyPolls] = useState(true); 
     const [polls, setPolls] = useState([]);
+    const [isAddingPoll, setIsAddingPoll] = useState(false);
 
     useEffect(() => {
         async function fetchUserData() {
@@ -55,6 +57,12 @@ export default function App() {
                             pollObj = {poll}
                         />
                     ))}
+                    {!isAddingPoll && <div onClick = {() => setIsAddingPoll(true)} className = "poll">
+                        <h2>+ Add Poll</h2>
+                    </div>}
+                    {isAddingPoll && <NewPollForm 
+                        onSubmit = {() => setIsAddingPoll(false)}
+                    />}
                 </section>
             </div>
         </section>

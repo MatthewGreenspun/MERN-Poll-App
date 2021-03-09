@@ -112,3 +112,62 @@ body {
   border-color: white;
   color: white;
 }
+
+#poll-creator {
+  text-align: left;
+  margin: 1rem auto;
+}
+
+.form-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.poll-form-option {
+  border: 2px solid #696c6e;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  border-radius: 4px;
+}
+
+.poll-form-option:hover {
+  transition: 0.3s;
+  transform: scale(1.1);
+  background-color: #e03516;
+  border-color: white;
+}
+
+.poll-form-options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.poll-form-option-creator {
+  border: 2px solid #696c6e;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.form-input {
+  background-color: #1a1a1a;
+  color: white;
+  border: 2px solid white;
+  border-radius: 4px;
+  outline: none;
+  margin: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.create-poll-btn {
+  background-color: #0051ff;
+  color: white;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 0.2rem;
+  font-size: 16px;
+  margin: 1rem auto;
+}
