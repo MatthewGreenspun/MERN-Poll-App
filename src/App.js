@@ -57,9 +57,9 @@ export default function App() {
                             pollObj = {poll}
                         />
                     ))}
-                    {!isAddingPoll && <div onClick = {() => setIsAddingPoll(true)} className = "poll">
+                    {!isAddingPoll && <div><div onClick = {() => setIsAddingPoll(true)} className = "poll" style={{marginBottom: "1rem"}}>
                         <h2>+ Add Poll</h2>
-                    </div>}
+                    </div><br /></div>}
                     {isAddingPoll && <NewPollForm 
                         onSubmit = {() => setIsAddingPoll(false)}
                     />}
