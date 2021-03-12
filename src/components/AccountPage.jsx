@@ -1,4 +1,3 @@
-import axios from "axios";
 import Navbar from "./Navbar";
 import Poll from "./Poll";
 import Sidebar from "./Sidebar";
@@ -14,9 +13,6 @@ export default function AccountPage({userId, userData}) {
 
     useEffect(() => {
         async function fetchUserData() {
-            // const apiRes = await axios.get(`http://localhost:5000/users/${userId}`);
-            // const json = JSON.parse(apiRes.request.response);
-            // console.log(json);
             const json = await userData;
             if(json.polls === undefined) return;
 
