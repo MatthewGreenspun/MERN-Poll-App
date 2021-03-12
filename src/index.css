@@ -178,3 +178,39 @@ body {
   transition: 0.3s;
   transform: scale(1.05);
 }
+
+.sign-in-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid #696c6e;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+#sign-in-btn {
+  all: unset;
+  text-align: center;
+  background-color: #0051ff;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0.2rem;
+}
+
+#id-input {
+  margin: 0.5rem 0;
+}
+
+.error-txt {
+  color: #f71b13;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
