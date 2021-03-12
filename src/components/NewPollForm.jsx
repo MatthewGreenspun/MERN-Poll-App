@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 
 export default function NewPollForm(props) {
+    const {userId} = props;
     const [pollTitle, setPollTitle] = useState("My Poll");
     const [pollOptions, setPollOptions] = useState([]);
 
@@ -20,7 +21,7 @@ export default function NewPollForm(props) {
         let pollJSONForBackend = {pollTitle, pollOptions: {}};
         pollOptions.forEach((option) => pollJSONForBackend.pollOptions[option] = 0);
         console.log(pollJSONForBackend);
-        axios.post("http://localhost:5000/users/newpoll/603708852cdd127a245dd23f", pollJSONForBackend);
+        axios.post(`http://localhost:5000/users/newpoll/${userId}`, pollJSONForBackend);
         props.onSubmit();
     }
 

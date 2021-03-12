@@ -2,8 +2,8 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import PollItem from "./PollItem";
 
-export default function Poll(props) {
-    const {pollTitle, pollItems, id} = props.pollObj;
+export default function Poll({pollObj, userId}) {
+    const {pollTitle, pollItems, id} = pollObj;
     const [totalVotes, setTotalVotes] = useState(0);
     const [hasVoted, setHasVoted] = useState(false);
     const [selection, setSelection] = useState(null);
@@ -17,7 +17,7 @@ export default function Poll(props) {
     async function handleVote(option) {
         if(hasVoted) return;
         const body = {id, option}
-        const response = await axios.post("http://localhost:5000/users/updatepoll/603708852cdd127a245dd23f", body);
+        const response = await axios.post(`http://localhost:5000/users/updatepoll/${userId}`, body);
         console.log(response);
         setHasVoted(true);
         setSelection(option);
