@@ -57,10 +57,10 @@ export default function AccountPage({userId, userData}) {
                             pollObj = {poll}
                         />
                     ))}
-                    {!isAddingPoll && <div><div onClick = {() => setIsAddingPoll(true)} className = "poll" style={{marginBottom: "1rem"}}>
+                    {!isAddingPoll && isOnMyPolls && <div><div onClick = {() => setIsAddingPoll(true)} className = "poll" style={{marginBottom: "1rem"}}>
                         <h2>+ Add Poll</h2>
                     </div><br /></div>}
-                    {isAddingPoll && <NewPollForm 
+                    {isAddingPoll && isOnMyPolls && <NewPollForm 
                         onSubmit = {() => setIsAddingPoll(false)}
                         userId = {userId}
                     />}
