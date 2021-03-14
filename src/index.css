@@ -214,3 +214,19 @@ body {
   text-align: center;
   margin-bottom: 0.5rem;
 }
+
+.poll-list-sorter {
+  border: 1px solid #696c6e;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+select {
+  border-radius: 4px;
+  color: white;
+  background-color: #333;
+}
