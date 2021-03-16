@@ -70,11 +70,11 @@ body {
 }
 
 .polls {
-  max-height: 90vh;
   width: 100%;
   display: flex;
   justify-content: stretch;
   flex-direction: column;
+  padding-bottom: 1rem;
 }
 
 .poll {
