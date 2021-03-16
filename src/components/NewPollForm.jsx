@@ -26,9 +26,8 @@ export default function NewPollForm(props) {
     }
 
     return (
-        <React.Fragment>
         <div className = "poll" id="poll-creator">
-        <div className="poll-form-option" onClick={() => props.onSubmit()} style={{float:"right", backgroundColor:"#f00"}}>X</div>
+            <div className="poll-form-option" onClick={() => props.onSubmit()} style={{float:"right", backgroundColor:"#f00"}}>X</div>
             <div className="form-title-container">
                 <h2>Title: </h2>
                 <input type="text" className="poll-form-title form-input" onChange={(e) => setPollTitle(e.target.value)} value={pollTitle}/>
@@ -47,8 +46,6 @@ export default function NewPollForm(props) {
                 <button type = "submit" className="create-poll-btn" onClick = {(e) => handleSubmit(e)}>Create Poll</button>
             </form>
         </div>
-        <br />
-        </React.Fragment>
     )
 }
 
