@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -53,7 +53,7 @@ body {
   padding: 1rem;
 }
 
-.nav-tab:hover{
+.nav-tab:hover {
   transition: 0.3s;
   background-color: #474747;
 }
@@ -61,7 +61,7 @@ body {
 .sidebar {
   min-height: 100px;
   height: 90vh;
-  min-width: 290px; 
+  min-width: 290px;
   width: 15vw;
   border: 1px solid #696969;
   border-radius: 4px;
