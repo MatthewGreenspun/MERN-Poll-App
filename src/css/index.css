@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "sans-serif";
+}
+
+body {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.user-profile {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 80em;
+  min-width: 290px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .user-profile {
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .sidebar {
+    text-align: center;
+    height: auto !important;
+    width: 100% !important;
+    margin: 0.5rem auto !important;
+  }
+}
+
+.sidebar {
+  min-height: 100px;
+  height: 90vh;
+  min-width: 290px;
+  width: 15vw;
+  border: 1px solid #696969;
+  border-radius: 4px;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+
+.polls {
+  width: 100%;
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.poll-list-sorter {
+  border: 1px solid #696c6e;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+select {
+  border-radius: 4px;
+  color: white;
+  background-color: #333;
+}
