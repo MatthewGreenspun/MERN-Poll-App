@@ -16,18 +16,22 @@ export default function NewPollForm(props) {
     setPollOptions([...newOptions]);
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     let pollJSONForBackend = { pollTitle, pollOptions: {} };
     pollOptions.forEach(
       (option) => (pollJSONForBackend.pollOptions[option] = 0)
     );
     console.log(pollJSONForBackend);
-    axios.post(
+    const response = await axios.post(
       `http://localhost:5000/users/newpoll/${userId}`,
       pollJSONForBackend
     );
     props.onSubmit();
+    if (response) {
+      console.log(response);
+      props.onConfirmedPollAdded();
+    }
   }
 
   return (

@@ -139,7 +139,12 @@ export default function AccountPage({ userId, userData }) {
           />
 
           {polls.map((poll, i) => (
-            <Poll key={i} userId={poll.polsterId} pollObj={poll} />
+            <Poll
+              key={i}
+              userId={poll.polsterId}
+              pollObj={poll}
+              onVoteConfirmed={() => fetchUserData()}
+            />
           ))}
 
           {!isAddingPoll && isOnMyPolls && (
@@ -154,6 +159,7 @@ export default function AccountPage({ userId, userData }) {
           {isAddingPoll && isOnMyPolls && (
             <NewPollForm
               onSubmit={() => setIsAddingPoll(false)}
+              onConfirmedPollAdded={() => fetchUserData()}
               userId={userId}
             />
           )}
